@@ -1,23 +1,29 @@
 @startuml
 'https://plantuml.com/object-diagram
-object Ship
-object Ship1
-object Ship2
 
-object CruiseShip
-object CargoShip
+object "<u>ship[0]:Ship</u>" as sh{
+}
+object "<u>ship[1]:Ship</u>" as sh1{
+}
+object "<u>ship[2]:Ship</u>" as sh2{
+}
 
-Ship1 <|-- CruiseShip
-Ship2 <|-- CargoShip
+object "<u>ship[1]:CruiseShip</u>" as cruise{
+}
+object "<u>ship[2]:CargoShip</u>" as cargo{
+}
 
-Ship : shipName = "Titanic"
-Ship : yearBuilt = "March31st,1909"
+sh1 <|-- cruise
+sh2 <|-- cargo
 
-Ship1 : shipName = "MVGemini"
-Ship1 : yearBuilt = "May30th,1991"
-CruiseShip : maxNumberPassengers = 100
+sh : shipName = "Titanic"
+sh : yearBuilt = "March31st,1909"
 
-Ship2 : shipName = "EverGiven"
-Ship2 : yearBuilt = "September25th,2018"
-CargoShip : cargoCapacityInTonnage = 220940
+sh1 : shipName = "MVGemini"
+sh1 : yearBuilt = "May30th,1991"
+cruise : maxNumberPassengers = 100
+
+sh2 : shipName = "EverGiven"
+sh2 : yearBuilt = "September25th,2018"
+cargo : cargoCapacityInTonnage = 220940
 @enduml
