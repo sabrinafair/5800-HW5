@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/object-diagram
+object Ship
+object Ship1
+object Ship2
+
+object CruiseShip
+object CargoShip
+
+Ship1 <|-- CruiseShip
+Ship2 <|-- CargoShip
+
+Ship : shipName = "Titanic"
+Ship : yearBuilt = "March31st,1909"
+
+Ship1 : shipName = "MVGemini"
+Ship1 : yearBuilt = "May30th,1991"
+CruiseShip : maxNumberPassengers = 100
+
+Ship2 : shipName = "EverGiven"
+Ship2 : yearBuilt = "September25th,2018"
+CargoShip : cargoCapacityInTonnage = 220940
+@enduml

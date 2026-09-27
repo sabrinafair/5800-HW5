@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Payable <|.. Freelancer
+Payable <|.. VendorInvoice
+
+interface Payable {
+	+ calculatePayment():double
+	+ getPayeeName():string
+
+	+ print():void
+}
+
+class Freelancer {
+    - first_name:string
+	- last_name:string
+	- hourly_rate:double
+	- hours_worked:double
+
+	+ getFirst_name():string
+	+ setFirst_name(in first_name:string):void
+	+ getLast_name():string
+	+ setLast_name(in last_name:string):void
+	+ getHourly_rate():double
+	+ setHourly_rate(in hourly_rate:double):void
+	+ getHours_worked():double
+	+ setHours_worked(in hours_worked:double):void
+	+ calculatePayment():double
+	+ getPayeeName():string
+    + printNameAndPay():void
+    + print():void
+
+
+}
+
+class VendorInvoice {
+    - vendor_name:string[1]
+	- invoice_number:string[1]
+	- amount_due:double[1]
+	
+	+ getVendor_name():string
+	+ setVendor_name(in vendor_name:string):void
+	+ getInvoice_number():string
+	+ setInvoice_number(in invoiceNumber:string):void
+	+ getAmount_due():double
+	+ setAmount_due(in amount_due:double):void
+	+ calculatePayment():double
+	+ getPayeeName():string
+    + printNameInvoiceAmount():void
+    + print():void
+
+}
+
+@enduml

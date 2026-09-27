@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Employee <|-- BaseEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- SalariedEmployee
+
+abstract class Employee {
++ firstName:string[1]
++ lastName:string[1]
++ socialSecurityNumber:string[1]
+
++ getFirstName():string
++ setFirstName(in firstName: string):void
++ getLastName():string
++ setLastName(in lastName:string):void
++ getSocialSecurityNumber():string
++ setSocialSecurityNumber(in socialSecurityNumber:string):void
++ toString():string
+}
+
+class BaseEmployee {
+- baseSalary:int[1]
+
++ getBaseSalary():int
++ setBaseSalary(in baseSalary:int):void
++ toString():string
+}
+
+class CommissionEmployee {
+- commissionRate:int[1]
+- grossSales:int[1]
+
++ getCommissionRate():int
++ setCommissionRate(in commissionRate:int):void
++ getGrossSales():int
++ setGrossSales(in grossSales:int):void
++ toString():string
+}
+
+class HourlyEmployee {
+- wage:int[1]
+- hoursWorked:int[1]
+
++ getWage():int
++ setWage(in wage:int):void
++ getHoursWorked():int
++ setHoursWorked(in hoursWorked:int):void
++ toString():string
+}
+
+class SalariedEmployee {
+- weeklySalary:int[1]
+
++ getWeeklySalary():int
++ setWeeklySalary(in weeklySalary:int):void
++ toString():string
+}
+@enduml

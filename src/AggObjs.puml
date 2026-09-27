@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/object-diagram
+object c1
+object c1Instructor
+object c1Textbook
+
+c1 o-- c1Instructor
+c1 o-- c1Textbook
+
+c1Instructor : firstName = "Nima"
+c1Instructor : lastName = "Davarpanah"
+c1Instructor : officeNumber = "3-2636"
+
+c1Textbook : author = "Robert Cecil Martin"
+c1Textbook : publisher = "Pearson"
+c1Textbook : title = "CleanCode:A Handbook of Agile Software Craftsmanship"
+
+c1 : name = "CS5800 - Advanced Software Engineering"
+c1 : instructor = c1Instructor
+c1 : textbook = c1Textbook
+
+@enduml

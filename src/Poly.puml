@@ -1,0 +1,36 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Ship <|-- CruiseShip
+Ship <|-- CargoShip
+
+class Ship {
+	- shipName:string[1]
+	- yearBuild:string[1]
+
+	+ getShipName():string
+    + setShipName(in shipName:string):void
+   	+ getShipYear():string
+    + setShipYear(in shipName:string):void
+	+ toString():string
+    + printShip():void
+}
+
+class CruiseShip {
+    - maxNumPassengers:int[1]
+
+    + getMaxNumPassengers():int
+    + setMaxNumPassengers(in maxNumPassengers:int):int
+    + toString():string
+}
+
+class CargoShip {
+    - cargoCapacityInTonnage:int
+
+	+ getCargoCapacityInTonnage():int
+	+ setCargoCapacityInTonnage(in cargoCapacityInTonnage:int):void
+	+ toString():string
+}
+
+
+@enduml

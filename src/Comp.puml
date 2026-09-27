@@ -1,0 +1,28 @@
+@startuml
+skinparam classAttributeIconSize 0 
+
+Folder *-- File
+
+class File {
+    - filename:string[1]
+    + getName():string
+    + setName(in name:string):void
+    + toString():string
+}
+
+class Folder {
+    - name:string[1]
+	- subFolders:Folder[*]
+	- files:File[*]
+	+ getName():string
+	+ setName(in name:string):void
+	+ removeSubfolder(in subFolderName:string):void
+	+ addSubFolders(in subFolderName:string):void
+	+ getSubFolders(in subFolderName:string):Folder
+	+ removeFile(in fileName:File):boolean
+    + addFile(in fileName:string):void
+    + toString():string
+	+ printFolderContents():void
+}
+
+@enduml

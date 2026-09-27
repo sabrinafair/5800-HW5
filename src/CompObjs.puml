@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/object-diagram
+object phpDemo1
+object subFolder0
+object subFolder01
+object subFolder03
+object subFolder04
+
+object file0
+object file1
+object file2
+
+phpDemo1 *-- subFolder0
+
+subFolder0 *-- subFolder01
+subFolder0 *-- subFolder03
+subFolder0 *-- subFolder04
+
+subFolder04 *-- file0
+subFolder04 *-- file1
+subFolder04 *-- file2
+
+phpDemo1 : name = "php_demo1"
+
+subFolder0 : name = "Source Files"
+subFolder01 : name = ".phalcon"
+subFolder03 : name = "cache"
+subFolder04 : name = "public"
+
+file0 : name = ".htaccess"
+file1 : name = ".htrouter.php"
+file2 : name = "index.html"
+
+subFolder04 : file[0] = file0
+subFolder04 : file[1] = file1
+subFolder04 : file[2] = file2
+
+@enduml

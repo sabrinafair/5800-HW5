@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Course <|- Instructor
+Course <|- Textbook
+
+class Course {
+    - name:string[1]
+    - instructors:Instructor[2]
+    - textbooks:Textbook[2]
+
+	+ getName():string
+	+ setName(firstName:string):void
+	+ getInstructors():Instructor[2]
+	+ setInstructors(in instructor:Instructor):void
+	+ getTextbooks():Textbook[2]
+	+ setTextbooks(in textbook:Textbook):void
+	+ toString():string
+	+ printCourse():void
+}
+
+class Textbook {
+    - title:string[1]
+    - author:string[1]
+    - publisher:string[1]
+
+	+ getTitle():string
+	+ setTitle(in firstName:string):void
+	+ getAuthor():string
+	+ setAuthor(in firstName:string):void
+	+ getPublisher():string
+	+ setPublisher(in firstName:string):void
+    + toString():string
+
+}
+
+class Instructor {
+    - firstName:string[1]
+    - lastName:string[1]
+    - officeNumber:string[1]
+
+	+ getFirstName():string
+	+ setFirstName(firstName:string):void
+	+ getLastName():string
+	+ setLastName(firstName:string):void
+	+ getOfficeNumber():string
+	+ setOfficeNumber(firstName:string):void
+    + toString():string
+}
+
+
+
+
+@enduml
